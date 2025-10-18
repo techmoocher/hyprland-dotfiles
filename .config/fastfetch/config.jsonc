@@ -23,14 +23,8 @@
     // },
     {
       "type": "datetime",
-      "key": "│ 𝄜 Date-Time",
+      "key": "│ 󰃭 Date-Time",
       "format": "{weekday-short} {month-name-short} {day-pretty}, {year} at {hour-pretty}:{minute-pretty}:{second-pretty} ({timezone-name})",
-      "keyColor": "#ffb6c1"
-    },
-    {
-      "type": "uptime",
-      "key": "│  Uptime",
-      "format": "{hours} hours, {minutes} mins, {seconds} secs",
       "keyColor": "#ffb6c1"
     },
     {
@@ -40,8 +34,14 @@
       "keyColor": "#ffb6c1"
     },
     {
+      "type": "uptime",
+      "key": "│  Uptime",
+      "format": "{hours} hours, {minutes} mins, {seconds} secs",
+      "keyColor": "#ffb6c1"
+    },
+    {
       "type": "title",
-      "key": "│  User",
+      "key": "│  User",
       "format": "{user-name-colored} @ {host-name-colored}",
       "keyColor": "#ffb6c1"
     },
