@@ -36,7 +36,7 @@
     {
       "type": "uptime",
       "key": "│  Uptime",
-      "format": "{hours} hours, {minutes} mins, {seconds} secs",
+      "format": "{hours} hours, {minutes} mins",
       "keyColor": "#ffb6c1"
     },
     {
