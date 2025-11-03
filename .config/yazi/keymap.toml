@@ -1,0 +1,49 @@
+[mgr]
+prepend_keymap = [
+  # Help menu
+  { on = "<F1>", run = "help", desc = "Open help menu" },
+
+  # Tab create and close
+  { on = "<C-t>", run = "tab_create", desc = "Create a new tab at ~" },
+  { on = "<C-w>", run = "tab_close", desc = "Close current tab" },
+
+  # Tab switch
+  { on = "<C-1>", run = "tab_switch 0", desc = "Switch to tab 1" },
+  { on = "<C-2>", run = "tab_switch 1", desc = "Switch to tab 2" },
+  { on = "<C-3>", run = "tab_switch 2", desc = "Switch to tab 3" },
+  { on = "<C-4>", run = "tab_switch 3", desc = "Switch to tab 4" },
+  { on = "<C-5>", run = "tab_switch 4", desc = "Switch to tab 5" },
+  { on = "<C-6>", run = "tab_switch 5", desc = "Switch to tab 6" },
+  { on = "<C-7>", run = "tab_switch 6", desc = "Switch to tab 7" },
+  { on = "<C-8>", run = "tab_switch 7", desc = "Switch to tab 8" },
+  { on = "<C-9>", run = "tab_switch 8", desc = "Switch to tab 9" },
+  { on = "<C-0>", run = "tab_switch 9", desc = "Switch to tab 10" },
+
+  # File management
+  { on = "<C-c>", run = "yank", desc = "Yank selected files (copy)" },
+  { on = "<C-x>", run = "yank --cut", desc = "Yank selected files (cut)" },
+  { on = "<C-v>", run = "paste", desc = "Paste yanked file" },
+  { on = "<C-d>", run = "remove", desc = "Trash selected files" },
+  { on = "<F2>", run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
+
+  # Directory navigation
+  { on = "/", run = "cd --interactive", desc = "Jump interactively" },
+
+  # Page navigation
+  { on = "<C-PageUp>", run = "arrow -100%", desc = "Move cursor up one page" },
+  { on = "<C-PageDown>", run = "arrow 100%", desc = "Move cursor down one page" },
+  { on = "<S-PageUp>", run = "arrow -50%", desc = "Move cursor up half page" },
+  { on = "<S-PageDown>", run = "arrow 50%", desc = "Move cursor down half page" },
+  { on = "<PageUp>", run = "arrow top", desc = "Move cursor to top" },
+  { on = "<PageDown>", run = "arrow bot", desc = "Move cursor to bottom" },
+]
+
+append_keymap = [
+  # Help
+  { on = "`", run = "help", desc = "Open help menu" },
+  { on = "?", run = "help", desc = "Open help menu" },
+
+  # File management
+  { on = "<C-r>", run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
+  { on = "<Delete>", run = "remove", desc = "Trash selected files" },
+]
