@@ -15,8 +15,8 @@ keymap = [
   { on = "w",               run = "tasks",                       desc = "Show task manager" },
 
   ### Mode switching ###
-  { on = "s",               run = "visual_mode",                 desc = "Enter visual mode (selection)" },
-  { on = "u",               run = "visual_mode --unset",         desc = "Enter visual mode (unset)" },
+  { on = "S",               run = "visual_mode",                 desc = "Enter visual mode (selection)" },
+  { on = "U",               run = "visual_mode --unset",         desc = "Enter visual mode (unset)" },
   { on = "X",               run = "escape",                      desc = "Exit visual mode, clear selection, or cancel search" },
 
   ### Navigation ###
@@ -95,12 +95,16 @@ keymap = [
   { on = ";",               run = "shell --interactive",         desc = "Run a shell command" },
   { on = ":",               run = "shell --interactive --block", desc = "Run a shell command (block)" },
 
-  ### Search ###
-  { on = ["f", "f"],        run = "search --via=fd",             desc = "Search files by name (via fd)" },
-  { on = ["f", "r"],        run = "search --via=rg",             desc = "Search files by content (via ripgrep)" },
+  ### Search & Filter ###
+  # Search
+  { on = ["F", "f"],        run = "search --via=fd",             desc = "Search files by name (via fd)" },
+  { on = ["F", "r"],        run = "search --via=rg",             desc = "Search files by content (via ripgrep)" },
   { on = "<C-s>",           run = "escape --search",             desc = "Cancel the ongoing search" },
   { on = "<C-Left>",        run = "find --smart --previous",     desc = "Find previous browsed file" },
   { on = "<C-Right>",       run = "find --smart --next",         desc = "Find forward browsed file" },
+
+  # Filter
+  { on = "f",               run = "filter --smart",              desc = "Filter files" },
 
   ### Directory navigation ###
   { on = "z",               run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
@@ -127,8 +131,8 @@ keymap = [
 
   ### Linemode ###
   { on = ["m", "s"],              run = "linemode size",               desc = "Linemode: size" },
-  { on = ["m", "p"],              run = "linemode permissions",        desc = "Linemode: permissions" },
   { on = ["m", "b"],              run = "linemode btime",              desc = "Linemode: btime" },
   { on = ["m", "m"],              run = "linemode mtime",              desc = "Linemode: mtime" },
+  { on = ["m", "p"],              run = "linemode permissions",        desc = "Linemode: permissions" },
   { on = ["m", "o"],              run = "linemode owner",              desc = "Linemode: owner" },
 ]
