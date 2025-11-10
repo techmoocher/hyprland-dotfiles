@@ -1,10 +1,13 @@
 [mgr]
 prepend_keymap = [
   { on = "<Esc>", run = "quit", desc = "Quit the process" },
-  { on = "x", run = "escape", desc = "Exit visual mode, clear selection, or cancel search" },
+  { on = "X", run = "escape", desc = "Exit visual mode, clear selection, or cancel search" },
 
   # Help menu
   { on = "<F1>", run = "help", desc = "Open help menu" },
+
+  # Open file
+  { on = "<Enter>", run = "open --interactive", desc = "Open selected files" },
 
   # Tab create and close
   { on = "<C-t>", run = "tab_create", desc = "Create a new tab at ~" },
@@ -22,17 +25,21 @@ prepend_keymap = [
   { on = "<C-9>", run = "tab_switch 8", desc = "Switch to tab 9" },
   { on = "<C-0>", run = "tab_switch 9", desc = "Switch to tab 10" },
 
-  # Copy / Cut / Paste / Trash
+  # Yank / Unyank / Copy / Cut / Paste / Trash
+  { on = "<Space>", run = ["toggle", "arrow next"], desc = "Toggle the current selection state - pointer move backward" },
+  { on = "<C-Space>", run = ["arrow prev", "toggle"], desc = "Toggle the current selection state - pointer move upward" },
+  { on = "x", run = "unyank", desc = "Cancel the yank status" },
+  { on = "<C-a>", run = "toggle_all --state=on", desc = "Select all files" },
   { on = "<C-c>", run = "yank", desc = "Yank selected file(s) (copy)" },
   { on = "<C-x>", run = "yank --cut", desc = "Yank selected file(s) (cut)" },
   { on = "<C-v>", run = "paste", desc = "Paste yanked file(s)" },
-  { on = "<C-V>", run = "paste --force", desc = "Paste yanked file(s) (overwrite if the destination exists)" },
+  { on = "<A-v>", run = "paste --force", desc = "Paste yanked file(s) (overwrite if the destination exists)" },
   { on = "<C-d>", run = "remove", desc = "Trash selected file(s)" },
   { on = "<F2>", run = "rename --cursor=before_ext", desc = "Rename selected file(s)" },
 
   # Search
   { on = "<C-f>", run = "search --via=fd", desc = "Search files by name (via fd)" },
-  { on = "<C-F>", run = "search --via=rg", desc = "Search files by content (via ripgrep)" },
+  { on = "<A-f>", run = "search --via=rg", desc = "Search files by content (via ripgrep)" },
   { on = "<C-s>", run = "escape --search", desc = "Cancel the ongoing search" },
   { on = "<C-Left>", run = "find --smart --previous", desc = "Find previous browsed file" },
   { on = "<C-Right>", run = "find --smart --next", desc = "Find forward browsed file" },
@@ -46,7 +53,11 @@ prepend_keymap = [
   { on = "<S-PageUp>", run = "arrow -50%", desc = "Move cursor up half page" },
   { on = "<S-PageDown>", run = "arrow 50%", desc = "Move cursor down half page" },
   { on = "<PageUp>", run = "arrow top", desc = "Move cursor to top" },
-  { on = "<PageDown>", run = "arrow bot", desc = "Move cursor to bottom" }
+  { on = "<PageDown>", run = "arrow bot", desc = "Move cursor to bottom" },
+
+  # Mode switching
+  { on = "s", run = "visual_mode", desc = "Enter visual mode (selection)" },
+  { on = "u", run = "visual_mode --unset", desc = "Enter visual mode (unset)" },
 ]
 
 append_keymap = [
