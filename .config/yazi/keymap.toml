@@ -136,3 +136,9 @@ keymap = [
   { on = ["m", "p"],              run = "linemode permissions",        desc = "Linemode: permissions" },
   { on = ["m", "o"],              run = "linemode owner",              desc = "Linemode: owner" },
 ]
+
+[tasks]
+keymap = [
+  { on = "T",               run = "show",                       desc = "Show task manager" },
+  { on = "w",               run = "show",                       desc = "Show task manager" },
+]
