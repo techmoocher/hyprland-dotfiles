@@ -61,14 +61,14 @@ button:hover {
 }
 
 #hibernate {
-    border-bottom:          4px solid #FFA564;
+    border-bottom:          4px solid #64DCFF;
     background-image:       image(url("./icons/hibernate.png"));
 }
 #hibernate:focus,
 #hibernate:active,
 #hibernate:hover {
     border-bottom:          none;
-    background-color:       #FFA564;
+    background-color:       #64DCFF;
     background-image:       image(url("./icons/hibernate-hovered.png"));
 }
 
@@ -98,13 +98,13 @@ button:hover {
 }
 
 #lock {
-    border-bottom:          4px solid #64DCFF;
+    border-bottom:          4px solid #FFAF46;
     background-image:       image(url("./icons/lock.png"));
 }
 #lock:focus,
 #lock:active,
 #lock:hover {
     border-bottom:          none;
-    background-color:       #64DCFF;
+    background-color:       #FFAF46;
     background-image:       image(url("./icons/lock-hovered.png"));
 }
