@@ -43,7 +43,7 @@ button:hover {
 #shutdown:focus,
 #shutdown:active,
 #shutdown:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #FF5A5A;
     background-image:       image(url("./icons/shutdown-hovered.png"));
 }
@@ -55,7 +55,7 @@ button:hover {
 #suspend:focus,
 #suspend:active,
 #suspend:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #FFF532;
     background-image:       image(url("./icons/suspend-hovered.png"));
 }
@@ -67,7 +67,7 @@ button:hover {
 #hibernate:focus,
 #hibernate:active,
 #hibernate:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #64DCFF;
     background-image:       image(url("./icons/hibernate-hovered.png"));
 }
@@ -80,7 +80,7 @@ button:hover {
 #logout:focus,
 #logout:active,
 #logout:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #D764FF;
     background-image:       image(url("./icons/logout-hovered.png"));
 }
@@ -92,7 +92,7 @@ button:hover {
 #reboot:focus,
 #reboot:active,
 #reboot:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #78FF64;
     background-image:       image(url("./icons/reboot-hovered.png"));
 }
@@ -104,7 +104,7 @@ button:hover {
 #lock:focus,
 #lock:active,
 #lock:hover {
-    border-bottom:          none;
+    border:                 none;
     background-color:       #FFAF46;
     background-image:       image(url("./icons/lock-hovered.png"));
 }
