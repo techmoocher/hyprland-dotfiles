@@ -14,7 +14,7 @@
     "label" : "logout",
     "action" : "hyprctl clients -j | jq -r '.[].pid' | xargs kill; pkill Hyprland || pkill sway || pkill niri || loginctl terminate-user $USER",
     "text" : "Coup d'état ",
-    "keybind" : "e"
+    "keybind" : "q"
 }
 {
     "label" : "shutdown",
