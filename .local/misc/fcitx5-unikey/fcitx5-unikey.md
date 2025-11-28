@@ -1,5 +1,7 @@
 # Vietnamese (VIE) Input on Arch Linux (Wayland)
 
+---
+
 ## Installation
 
 First, install `fcitx5` and its dependecies.
@@ -34,7 +36,7 @@ Add Unikey to your "Current Input Method" (the right pane).
     <img src="fcitx5-preview-1.jpg" alt="Illustration for adding Unikey to Current Input Method" width=50% height=50% />
 </div>
 
-## Miscellaneous
+<h3><i><b>(Optional)</b></i></h3>
 
 You can change the keybind for switching input method by adding the following into Hyprland config (I use CTRL + SHIFT + F).
 
