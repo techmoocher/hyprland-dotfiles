@@ -30,7 +30,9 @@ fcitx5-configtool
 
 Add Unikey to your "Current Input Method" (the right pane).
 
-![](fcitx5-preview-1.jpg)
+<div align="center">
+    <img src="fcitx5-preview-1.jpg" alt="Illustration for adding Unikey to Current Input Method" width=50% height=50% />
+</div>
 
 ## Miscellaneous
 
