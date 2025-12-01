@@ -1,0 +1,130 @@
+/* Reset defaults */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Noto Sans", "Noto Color Emoji";
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #ffffff;
+}
+
+/* Bubble box */
+#workspaces,
+#custom-weather,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#bluetooth,
+#custom-power,
+#custom-arch {
+    background: rgba(25, 23, 36, 0.85);
+    padding: 6px 12px;
+    margin: 4px 5px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ###--- Left ---### */
+#custom-arch {
+    font-size: 18px;
+    background-color: #FFB6C1;
+    color: #191724;
+    padding: 6px 14px;
+}
+
+#workspaces,
+#network,
+#bluetooth {
+    margin-right: 2px;
+}
+
+#clock {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#workspaces button {
+    color: #817c9c;
+    padding: 0 6px;
+    font-size: 16px;
+}
+
+#workspaces button.active {
+    color: #FFB6C1;
+}
+
+#workspaces button:hover {
+    box-shadow: 0 0 6px 2px rgba(255, 182, 193, 0.4);
+    border-radius: 20px;
+}
+
+#network,
+#bluetooth {
+    padding: 6px 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+#network:hover,
+#bluetooth:hover {
+    /* box-shadow: 0 0 8px 2px rgba(255, 182, 193, 0.5); */
+    background: rgba(25, 23, 36, 0.85);
+}
+
+/* ###--- Center ---###*/
+#clock {
+    font-weight: bold;
+    color: #FFB6C1;
+}
+
+/* ###--- Right ---### */
+#cpu,
+#memory,
+#pulseaudio,
+#backlight,
+#battery,
+#network {
+    padding-right: 10px;
+}
+
+#custom-power {
+    color: #e95678;
+    font-size: 16px;
+    padding: 6px 16px;
+    transition: background 0.3s;
+}
+#custom-power:hover {
+    background: rgba(233, 86, 120, 0.25);
+}
+
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover {
+    background: rgba(255, 182, 193, 0.18);
+}
+
+/* ###--- Tooltip styling ---### */
+tooltip {
+    background: rgba(25, 23, 36, 0.9);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 182, 193, 0.25);
+    padding: 6px 10px;
+    color: #ffffff;
+    font-size: 13px;
+    /*box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);*/
+}
+
+tooltip label {
+    padding: 2px 6px;
+    font-weight: 500;
+}
