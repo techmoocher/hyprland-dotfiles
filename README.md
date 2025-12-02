@@ -10,11 +10,11 @@
 
 ### TO-DO
 
-[x] kitty
-[x] waybar
-[x] yazi
-[] tmux
-[] nvim
-[x] rofi
-[x] fastfetch
-[] hypr
+- [x] kitty
+- [x] waybar
+- [x] yazi
+- [ ] tmux
+- [ ] nvim
+- [x] rofi
+- [x] fastfetch
+- [ ] hypr
