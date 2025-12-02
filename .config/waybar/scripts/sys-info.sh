@@ -2,9 +2,9 @@
 
 
 fastfetch \
-  --logo "$(find ~/.config/fastfetch/images -type f | shuf -n 1)" \
+  --logo $HOME/.config/waybar/assets/archlinux-girl.png \
   --logo-type kitty-direct \
-  --logo-width 28 \
+  --logo-width 30 \
   --logo-height 18 \
 
 echo "Press Enter or Esc to exit..."
