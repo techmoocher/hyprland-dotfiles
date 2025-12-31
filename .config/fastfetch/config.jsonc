@@ -1,8 +1,8 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/images/mahiru.png",
-    "height": 21,
+    "source": "~/.config/fastfetch/images/archlinux-girl.png",
+    "height": 18,
     "padding": {
       "top": 2,
       "left": 4,
@@ -10,9 +10,7 @@
     }
   },
   "modules": [
-    "break",
-
-    /* ------ GENERAL ------ */
+    /******* GENERAL ******/
     {
       "type": "custom",
       "format": "\u001b[38;2;255;182;193m┌───────────────────── General ──────────────────────┐"
@@ -52,7 +50,7 @@
 
     "break",
 
-    /* ------ HARDWARE ------ */
+    /****** HARDWARE ******/
     {
       "type": "custom",
       "format": "\u001b[38;2;255;255;178m┌───────────────────── Hardware ─────────────────────┐"
@@ -100,7 +98,7 @@
 
     "break",
 
-    /* ------ SOFTWARE ------ */
+    /****** SOFTWARE ******/
     {
       "type": "custom",
       "format": "\u001b[38;2;112;198;255m┌───────────────────── Software ─────────────────────┐"
