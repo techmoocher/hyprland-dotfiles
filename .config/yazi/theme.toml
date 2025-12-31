@@ -1,21 +1,32 @@
+[app]
+overall           = { bg = "#2A1E24" }
+
 [mgr]
 cwd               = { fg = "#FFFFFF", bg = "#FFA5D2", bold = true, italics = true }
-
 border_style      = { fg = "#FFDCFF", bold = true }
-
 find_keyword      = { fg = "#FFFFFF", bg = "#FFC855", bold = true, underline = true }
-
-hovered           = { fg = "#000000", bg = "#FFA0D8", bold = true }
+hovered           = { fg = "black", bg = "#FFA0D8", bold = true }
 preview_hovered   = { fg = "#FFDCF5" }
 
+#marker_selected   = { bg = "#9BFF78" }
+#marker_copied     = { bg = "#F2B90F" }
+#marker_cut        = { bg = "#FF8A8A" }
+#count_selected    = { fg = "#000000", bg = "#9BFF78", bold = true }
+#count_copied      = { fg = "#000000", bg = "#F2B90F", bold = true }
+#count_cut         = { fg = "#000000", bg = "#FF8A8A", bold = true }
+marker_selected    = { fg = "white", bg = "green", bold = true }
+marker_copied      = { fg = "white", bg = "yellow", bold = true }
+marker_cut         = { fg = "white", bg = "red", bold = true }
+count_selected    = { fg = "white", bg = "green", bold = true }
+count_copied      = { fg = "white", bg = "yellow", bold = true }
+count_cut         = { fg = "white", bg = "red", bold = true }
 
-marker_selected   = { bg = "#9BFF78" }
-marker_copied     = { bg = "#F2B90F" }
-marker_cut        = { bg = "#FF8A8A" }
+[indicator]
+parent            = { fg = "#3A2420", bg = "#FFA0D7", bold = true }
+current           = { fg = "#4B2E2A", bg = "#FFC8D7", bold = true }
+preview           = { fg = "#52352C", bg = "#FFE8D1", bold = true }
+padding           = { open = "", close = "" }
 
-count_selected    = { fg = "#000000", bg = "#9BFF78", bold = true }
-count_copied      = { fg = "#000000", bg = "#F2B90F", bold = true }
-count_cut         = { fg = "#000000", bg = "#FF8A8A", bold = true }
 
 [tabs]
 active            = { fg = "#000000", bg = "#FFB4FF", bold = true, underline = true }
@@ -35,11 +46,16 @@ unset_alt         = { fg = "#CE93D8", bg = "#2C2533" }
 [status]
 overall           = { fg = "#E1E1E1", bg = "#483748" }
 
-perm_type         = { fg = "#64DCFF" }
-perm_read         = { fg = "#FFFF64" }
-perm_write        = { fg = "#FF80AB" }
-perm_exec         = { fg = "#78FF64" }
-perm_sep          = { fg = "#B39DDB" }
+#perm_type         = { fg = "#64DCFF" }
+#perm_read         = { fg = "#FFFF64" }
+#perm_write        = { fg = "#FF80AB" }
+#perm_exec         = { fg = "#78FF64" }
+#perm_sep          = { fg = "#B39DDB" }
+perm_type         = { fg = "blue" }
+perm_read         = { fg = "yellow" }
+perm_write        = { fg = "red" }
+perm_exec         = { fg = "green" }
+perm_sep          = { fg = "magenta" }
 
 progress_label    = { fg = "#FCE4EC" }
 progress_normal   = { fg = "#F48FB1" }
@@ -83,6 +99,7 @@ inactive          = { fg = "#FFDCF5" }
 on                = { fg = "#64DCFF", bold = true }
 run               = { fg = "#FF5078" }
 desc              = { fg = "#FFDCF5", bold = true }
+hovered           = { reversed = true, bold = true }
 footer            = { fg = "#E1E1E1", bg = "#483748", bold = true, italic = true }
 icon_info         = "🌸"
 icon_warn         = "⚠️"
@@ -110,11 +127,13 @@ hovered           = { fg = "#000000", bg = "#FFA0D8", bold = true }
 [icon]
 prepend_dirs = [
   { name = "Downloads",           text = "󰉍",     fg = "#78FF64" },
+  { name = "Desktop",             text = "󰇄",     fg = "cyan"    },
   { name = ".config",             text = "",     fg = "#A56E00" },
   { name = ".cargo",              text = "󱘗",     fg = "#BE410E" },
   { name = ".cache",              text = "󰃨",     fg = "#B9FF78" },
   { name = ".local",              text = "󱂵",     fg = "#64EBFF" },
   { name = ".git",                text = "",     fg = "#F1502F" },
+  { name = ".npm",                text = "",     fg = "#E64B4B" },
 ]
 
 prepend_exts = [
