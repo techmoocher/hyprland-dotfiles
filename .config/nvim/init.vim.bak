@@ -1,0 +1,8 @@
+set scrolloff=5
+
+set number
+set relativenumber
+
+set cursorline
+highlight CursorLine cterm=underline gui=underline
+highlight CursorLineNr cterm=bold ctermfg=208 gui=bold guifg=#ff87c5
