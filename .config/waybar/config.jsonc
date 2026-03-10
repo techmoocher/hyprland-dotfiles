@@ -1,10 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 44,
+    "height": 46,
 
     "modules-left": [
-        "custom/arch",
+        "hyprland/window",
+        //"custom/arch",
         "hyprland/workspaces",
         "custom/weather",
         "tray"
@@ -25,29 +26,46 @@
     ],
 
     // LEFT
+    "hyprland/window": {
+        "max-length":   15,
+        "justify":      "center",
+        "format":       "󰣇  {class}",
+        "on-click":     "kitty --class 'sys-info' -e sh -c '$HOME/.config/waybar/scripts/sys-info.sh'",
+        "rewrite": {
+            "kitty":                      " kitty",
+            "firefox_developer-edition":  "󰈹  Firefox Dev",
+            "firefox":                    "󰈹  Firefox",
+            "librewolf":                  "󰈹  LibreWolf",
+            "sublime_text":               "  Sublime Text",
+            "org.pwmt.zathura":           "󰈙  Zathura"
+        }
+    },
+
     "custom/arch": {
-        "justify":  "center",
-        "format":   "󰣇",
-        "tooltip":  false,
-        "on-click": "kitty --class 'floating-term' -e sh -c '$HOME/.config/waybar/scripts/sys-info.sh'"
+        "justify":    "center",
+        "format":     "󰣇",
+        "tooltip":    false,
+        "on-click":   "kitty --class 'floating-term' -e sh -c '$HOME/.config/waybar/scripts/sys-info.sh'"
     },
 
     "hyprland/workspaces": {
-        "format": "{icon}",
+        "justify":    "center",
+        "format":     "{icon}",
         "format-icons": {
-            "1": "⬤", "2": "⬤", "3": "⬤", "4": "⬤", "5": "⬤",
-            "6": "⬤", "7": "⬤", "8": "⬤", "9": "⬤", "10": "⬤",
+            "1": "󰬺", "2": "󰬻", "3": "󰬼", "4": "󰬽", "5": "󰬾",
+            "6": "󰬿", "7": "󰭀", "8": "󰭁", "9": "󰭂", "10": "󰿩",
             "default": "⬤"
         },
-        "persistent-workspaces": { "*": 10 }
+        "persistent-workspaces": { "*": 5 }
     },
 
     "custom/weather": {
-        "exec": "curl -s 'wttr.in/?format=%c+%t&m'",
-        "return-type": "",
-        "format": "{}",
-        "tooltip": true,
-        "interval": 3600
+        "justify":      "center",
+        "exec":         "curl -s 'wttr.in/?format=%c+%t&m'",
+        "return-type":  "",
+        "format":       "{}",
+        "tooltip":      true,
+        "interval":     3600
     },
 
     "tray": {
@@ -57,12 +75,13 @@
 
     // CENTER
     "clock": {
-        "format": "{:%a %b %d, %Y @ %I:%M %p}",
-        "tooltip-format": "<span font_family='monospace' size='small' foreground='#f5cce3' letter_spacing='150'>{calendar}</span>",
+        "justify":          "center",
+        "format":           "{:%a %b %d, %Y @ %I:%M %p}",
+        "tooltip-format":   "<span font_family='monospace' size='small' foreground='#f5cce3' letter_spacing='150'>{calendar}</span>",
         "calendar": {
-            "mode":       "month",
-            "weeks-pos":  "left",
-            "on-scroll":  1,
+            "mode":         "month",
+            "weeks-pos":    "left",
+            "on-scroll":    1,
             "format": {
                 "months":   "\t<span color='#f7dfe7'><b>{}</b></span>",
                 "days":     "<span color='#f2bed1'>{}</span>",
@@ -74,46 +93,49 @@
         "actions": {
             "on-scroll-up":   "shift_down",
             "on-scroll-down": "shift_up"
-        },
+        }
     },
 
     // RIGHT
     "network": {
-        "family": "ipv4",
-        "format": "{icon}",
+        "interval":     30,
+        "max-length":   5,
+        "family":       "ipv4",
+        "format":       "{icon}",
+        "on-click":     "$HOME/.config/waybar/scripts/network-menu.sh",
         "tooltip-format-wifi":          "   {essid} ({ifname}) - {signalStrength}%\n   {ipaddr} ({netmask})\n   {bandwidthDownBytes}\t   {bandwidthUpBytes}",
         "tooltip-format-ethernet":      "󰈀   {essid} ({ifname}) - {signalStrength}%\n   {ipaddr} ({netmask})\n   {bandwidthDownBytes}\t   {bandwidthUpBytes}",
         "tooltip-format-disabled":      "󱚵   Disabled",
         "tooltip-format-disconnected":  "󰖪   Disconnected",
         "format-icons": {
-            "disconnected": " 󰤭  ",
-            "ethernet":     " 󰈀  ",
-            "disabled":     " 󰤫  ",
-            "linked":       "   ",
-            "wifi":         [" 󰤯  ", " 󰤟  ", " 󰤢  ", " 󰤥  ", " 󰤨  "]
-        },
-        "interval": 30,
-        //"on-click": "~/.config/waybar/scripts/nm-menu.sh"
-        "on-click": "$HOME/.config/waybar/scripts/netmenu.sh"
+            "disconnected":   " 󰤭  ",
+            "ethernet":       " 󰈀  ",
+            "disabled":       " 󰤫  ",
+            "linked":         "   ",
+            "wifi":           [" 󰤯  ", " 󰤟  ", " 󰤢  ", " 󰤥  ", " 󰤨  "]
+        }
     },
 
     "bluetooth": {
-        "format": " 󰂯 ",
-        "format-disabled": " 󰂲 ",
-        "format-connected": "  {num_connections} connected",
-        "tooltip-format": "   {controller_alias}\t{controller_address}\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "󰂯   {device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery":"󰥉   {device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager"
+        "max-length":         5,
+        "justify":            "center",
+        "format":             " 󰂯 ",
+        "format-disabled":    " 󰂲 ",
+        "format-connected":   " 󰂯 ",
+        "on-click":           "blueman-manager",
+        "tooltip-format":                               "   {controller_alias}\t{controller_address}\n   {num_connections} connections\n{device_enumerate}",
+        "tooltip-format-enumerate-connected":           "󰂯   {device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery":   "󰥉   {device_alias}\t{device_battery_percentage}%"
     },
 
     "cpu": {
-        "justify":        "center",
         "interval":       10,
+        "max-length":     10,
+        "justify":        "center",
         "format":         "󰍛  {usage}%",
         "format-alt":     "{icon0}{icon1}{icon2}{icon3}",
         "format-icons":   ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "tooltip-format": "󰬺  {usage0}%\t󰬻  {usage1}%\t󰬼  {usage2}%\t󰬽  {usage3}%\n󰾆  {min_frequency}\t󰾅  {avg_frequency}\t󰓅  {max_frequency}",
+        "tooltip-format": "󰬺  {usage0}%\t󰬻  {usage1}%\t󰬼  {usage2}%\t󰬽  {usage3}%\n󰾆  {min_frequency}\t󰾅  {avg_frequency}\t󰓅  {max_frequency}"
     },
 
     "memory": {
@@ -125,18 +147,18 @@
         "interval":         10,
         "max-length":       10,
         "justify":          "center",
-        "format":           "󰾆  {used:0.2f}GB",
-        "format-medium":    "󰾅  {used:0.2f}GB",
-        "format-high":      "󰓅  {used:0.2f}GB",
-        "format-critical":  "  {used:0.2f}GB",
+        "format":           "󰾆  {used:0.1f}GB",
+        "format-medium":    "󰾅  {used:0.1f}GB",
+        "format-high":      "󰓅  {used:0.1f}GB",
+        "format-critical":  "  {used:0.1f}GB",
         "format-alt":       "   {percentage}%",
-        "tooltip-format":   "   RAM: {used:0.1f}GB / {total:0.1f}GB - {percentage}%\n   Swap: {swapUsed:0.1f}GB / {swapTotal:0.1f}GB - {swapPercentage}%"
+        "tooltip-format":   "   RAM: {used:0.2f}GB / {total:0.2f}GB - {percentage}%\n   SWP: {swapUsed:0.2f}GB / {swapTotal:0.2f}GB - {swapPercentage}%"
     },
 
     "pulseaudio": {
         "max-length":       10,
         "format":           "{icon} {volume}%",
-        "format-bluetooth": "󰂯  {volume}%",
+        //"format-bluetooth": "󰂯  {volume}%",
         "format-muted":     "󰝟  {volume}%",
         "format-icons": {
             //"speaker":      "󰓃 ",
@@ -151,33 +173,35 @@
             "car":          " ",
             "default":      [" ", " ", "  "]
         },
-      "tooltip": true,
-      "on-click": "pavucontrol-qt"
+      "tooltip":    true,
+      "on-click":   "pavucontrol | pavucontrol-qt"
     },
 
     "battery": {
         "states": {
-            "warning":  35,
+            "warning":  30,
             "critical": 15
         },
         "events": {
-            "on-discharging-warning":   "notify-send -u normal 'Low Battery'",
-            "on-discharging-critical":  "notify-send -u critical 'Critical Battery'",
-            "on-charging-100":          "notify-send -u normal 'Full Charged!'"
+            "on-discharging-warning":   "notify-send -u normal ' Low Battery'",
+            "on-discharging-critical":  "notify-send -u critical '󰂃 Critical Battery'",
+            "on-charging-100":          "notify-send -u normal '󰂄 Fully Charged!'"
         },
-        "interval":     10,
-        "format":       "{icon} {capacity}%",
+        "interval":       10,
+        "max-length":     8,
+        "format":         "{icon} {capacity}%",
         "format-icons": {
-            "charging": " ",
-            "plugged":  "󰂄 ",
-            "default":  ["󰂃 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "]
+            "charging":   " ",
+            "plugged":    "󰂄 ",
+            "default":    ["󰂃 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "]
         },
-        "format-time":  "{H} hrs, {m} mins"
+        "format-time":    "{H} hrs, {m} mins",
+        "on-click":       "btm --expanded --default_widget_type battery"
     },
 
     "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "wlogout"
+        "format":         "",
+        "on-click":       "wlogout",
+        "tooltip-format": "Power"
     }
 }
