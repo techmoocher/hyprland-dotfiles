@@ -1,0 +1,157 @@
+[flags]
+basic                           = false
+tree                            = true
+expanded                        = false
+disable_click                   = true
+hide_k_threads                  = false
+show_table_scroll_position      = true
+temperature_type                = "c" # "c", "f", "k"
+
+hide_avg_cpu                    = false
+average_cpu_row                 = false
+unnormalized_cpu                = false
+
+rate                            = 1000
+default_time_value              = 60000
+time_delta                      = 15000
+retention                       = "10m"
+
+use_old_network_legend          = true
+network_use_log                 = false
+network_use_binary_prefix       = true
+network_legend                  = "bottom-left"
+
+enable_cache_memory             = false
+process_memory_as_value         = true
+disable_advanced_kill           = false
+memory_legend                   = "bottom-left"
+
+#case_sensitive = false
+#whole_word = false
+#regex = false
+
+###### WIDGETS ######
+[processes]
+# Available options:
+# PID, Name, CPU%, Mem%, R/s, W/s, T.Read,
+# T.Write, User, State, Time, GMem%, GPU%
+columns = ["PID", "Name", "CPU%", "Mem%", "State", "Time"]
+get_threads = false
+
+[cpu]
+# "all" (default), "average"/"avg"
+default = "all"
+
+[disk]
+# Available options:
+# Disk, Mount, Used, Free, Total, Used%, Free%, R/s, W/s
+columns = ["Disk", "Mount", "Total", "Used", "Free", "Used%", "R/s", "W/s"]
+
+#[temperature]
+#[temperature.sensor_filter]
+#is_list_ignored = true
+#list = ["cpu", "wifi"]
+#regex = false
+#whole_word = false
+#case_sensitive = false
+
+#[network]
+#[network.interface_filter]
+#is_list_ignored = true
+#list = ["virbr0.*"]
+#regex = false
+#whole_word = false
+#case_sensitive = false
+
+###### STYLING ######
+[styles]
+# Available options:
+# "default", "default-light",
+# "gruvbox", "gruvbox-light",
+# "nord", "nord-light"
+theme = "default"
+
+[styles.cpu]
+all_entry_color = "#ffb7d5"
+avg_entry_color = "#ff5c8a"
+cpu_core_colors = [
+  "#8be9fd",  # cyan
+  "#ffb86c",  # peach
+  "#bd93f9",  # lavender
+  "#50fa7b",  # green
+  "#ff79c6",  # hot pink
+  "#f1fa8c",  # yellow
+  "#82aaff",  # blue
+  "#ff5555",  # coral red
+]
+
+[styles.memory]
+ram_color = "#ffb7d5"
+cache_color = "#f9e2af"
+swap_color = "#cba6f7"
+arc_color = "#94e2d5"
+gpu_colors = [
+  "#f38ba8",
+  "#cba6f7",
+  "#89b4fa",
+  "#94e2d5",
+  "#fab387"
+]
+
+[styles.network]
+rx_color = "#94e2d5"
+tx_color = "#ffb7d5"
+rx_total_color = "#89b4fa"
+tx_total_color = "#f38ba8"
+
+[styles.battery]
+high_battery_color   = "#a6e3a1"
+medium_battery_color = "#f9e2af"
+low_battery_color    = "#f38ba8"
+
+[styles.tables]
+headers = { color = "#ffd3e1", bold = true }
+
+[styles.graphs]
+graph_color = "#ffcad4"
+legend_text = { color = "#e0b8ff" }
+
+[styles.widgets]
+border_color = "#8a6d7c"
+selected_border_color = "#ffb7d5"
+widget_title = { color = "#ffd3e1", bold = true }
+text = { color = "#f8f5f2" }
+selected_text = { color = "#18161b", bg_color = "#ffb7d5", bold = true }
+disabled_text = { color = "#938793" }
+
+# Linux-only
+thread_text = { color = "#a6e3a1" }
+
+###### LAYOUT ######
+# Available widgets:
+# "cpu", "memory", "network", "processes",
+# "temperature", "disk", "battery", "empty"
+[[row]]
+  ratio = 30
+  [[row.child]]
+    ratio = 80
+    type  = "cpu"
+  [[row.child]]
+    ratio = 20
+    type  = "battery"
+[[row]]
+  ratio = 40
+  [[row.child]]
+    ratio = 60
+    type  = "memory"
+  [[row.child]]
+    ratio = 40
+    type  = "network"
+[[row]]
+  ratio = 30
+    [[row.child]]
+      ratio = 60
+      type  = "processes"
+    [[row.child]]
+      ratio = 40
+      type  = "temperature"
