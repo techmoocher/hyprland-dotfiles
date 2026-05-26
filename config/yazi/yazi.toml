@@ -40,7 +40,7 @@ edit = [
 ]
 
 edit_nvim = [
-  { run = "nvim %s", block = true, for = "unix", desc = "Edit with Neovim" },
+  { run = "nvim %s", block = true, for = "unix", desc = "Edit with NEOVIM" },
 ]
 
 open_zathura = [
@@ -57,7 +57,7 @@ prepend_rules = [
   { mime = "image/*",     use = [ "open_nomacs" ] },
   { mime = "video/*",     use = [ "play_mpv" ] },
 
-  { url = "*.html",       use = [ "open_browser", "edit" ] },
+  { url = "*.html",       use = [ "open_browser", "edit", "edit_nvim" ] },
   { url = "*.pdf",        use = [ "open_zathura" ] },
   { url = "*.epub",       use = [ "open_zathura" ] },
 ]
